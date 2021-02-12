@@ -1,0 +1,48 @@
+AddCharset UTF-8 .php
+Options -Indexes
+ServerSignature Off
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/x-javascript "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+## EXPIRES CACHING ##
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteBase /
+
+    RewriteCond %{THE_REQUEST} //
+    RewriteRule ^.*$ $0 [R=302,L,NE]
+
+    RewriteRule ^(Assets/*) - [L]
+    RewriteRule ^(vendor/*) - [L]
+    RewriteRule favicon.ico - [L]
+
+    RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/? index.php?P_one=$1&P_two=$2&P_three=$3&P_four=$4&P_five=$5&P_six=$6 [L,QSA]
+    RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/? index.php?P_one=$1&P_two=$2&P_three=$3&P_four=$4&P_five=$5 [L,QSA]
+    RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/? index.php?P_one=$1&P_two=$2&P_three=$3&P_four=$4 [L,QSA]
+    RewriteRule ^([^/]+)/([^/]+)/([^/]+)/? index.php?P_one=$1&P_two=$2&P_three=$3 [L,QSA]
+    RewriteRule ^([^/]+)/([^/]+)/? index.php?P_one=$1&P_two=$2 [L,QSA]
+    RewriteRule ^([^/]+)/? index.php?P_one=$1 [L,QSA]
+</IfModule>
+
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php72” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+

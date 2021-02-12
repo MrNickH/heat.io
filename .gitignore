@@ -1,0 +1,36 @@
+
+#Core Configuration File
+config.php
+
+#Node
+node_modules/
+
+#Composer
+vendor/
+
+#Created Files by Grunt
+Assets/css/imports\.min\.css
+Assets/css/libs\.min\.css
+Assets/css/written\.min\.css
+Assets/css/written\.*\.min\.css
+Assets/css/written\.dark\.min\.css
+Assets/css/written\.fslots\.min\.css
+Assets/css/written\.gpits\.min\.css
+Assets/css/written\.renegade\.min\.css
+Assets/js/*.js
+
+Core/cachebuster.php
+
+\.idea/
+\.vscode/
+
+#Image Files
+Assets/img/avatars/user/
+Assets/img/forum/user/
+Assets/img/giveaways/
+Assets/img/casinos/
+Assets/img/news/
+Assets/img/tmp/
+Cache/
+
+error_log
