@@ -3,7 +3,7 @@
 
 namespace Model\Utilities;
 
-use PiPHP\GPIO\GPIO as GPIOLib;
+use PhpGpio\Gpio as GPIOLib;
 
 class GPIO
 {
@@ -16,13 +16,28 @@ class GPIO
 
     public static function readGPIO(int $pinNumber)
     {
-           $lib = self::getGPIOLib();
-           $lib->getOutputPin($pinNumber)->getValue();
+            echo self::readValuePin($pinNumber);
+    }
+
+    /**
+     * Read pin value.
+     *
+     * @param int, $pinNo
+     * @return bool|string
+     */
+    public static function readValuePin($pinNo) {
+        $file = '/sys/class/gpio/gpio'.$pinNo.'/value';
+        if(!file_exists($file)) {
+            return false;
+        }
+
+        return trim(file_get_contents('/sys/class/gpio/gpio'.$pinNo.'/value'));
     }
 
     public static function setGPIO(int $pinNumber, bool $value)
     {
         $lib = self::getGPIOLib();
-        $lib->getOutputPin($pinNumber)->setValue((int) $value);
+        $lib->setup($pinNumber, 'out');
+        $lib->output($pinNumber, 1);
     }
 }

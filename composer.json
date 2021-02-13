@@ -1,6 +1,7 @@
 {
     "require": {
         "piphp/gpio": "^0.4.0",
-        "twitter/bootstrap": "^4.5"
+        "twitter/bootstrap": "^4.5",
+        "ronanguilloux/php-gpio": "^1.0"
     }
 }

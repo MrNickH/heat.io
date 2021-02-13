@@ -73,6 +73,10 @@ echo -e "$Cyan \nSetting up VHOSTS $Color_Off"
 
 #ASK: PiHole?  LocalDNS?
 
+#Enable www-data access to GPIOS
+sudo usermod -a -G gpio www-data
+
+
 #Restart Apache AGAIN
 echo -e "$Cyan \nRestarting Apache AGAIN $Color_Off"
 sudo service apache2 restart
