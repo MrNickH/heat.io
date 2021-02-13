@@ -89,5 +89,11 @@ echo -e "$Cyan \nRestarting Apache AGAIN $Color_Off"
 
 #Install CRONJOB
 
+#Install Composer
+composer install
+
+#NPM Install
+npm install
+
 #All done?
 
