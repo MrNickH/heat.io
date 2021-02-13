@@ -25,19 +25,24 @@ echo -e "$Red \nGetting SUDO - You may be prompted for your password (usually 'r
 # Update packages and Upgrade system
 echo -e "$Cyan \nUpdating System.. $Color_Off"
 sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get update -y
 
 ## Install AMP
 echo -e "$Cyan \nInstalling Apache2 $Color_Off"
-sudo apt-get install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1 ssl-cert -y
+sudo apt-get install apache2 apache2-utils ssl-cert -y
 
 echo -e "$Cyan \nInstalling PHP & Requirements $Color_Off"
-sudo apt-get install php7 php7-common php7-curl php7-dev composer npm -y
+sudo apt-get install php7 php7.4-common php7.4-curl php7.4-dev -y
+
+echo -e "$Cyan \nInstalling COMPOSER and NPM $Color_Off"
+sudo apt-get install composer npm -y
 
 echo -e "$Cyan \nInstalling MySQL $Color_Off"
 sudo apt-get install mysql-server mysql-client libmysqlclient15.dev -y
 
 echo -e "$Cyan \nVerifying installs$Color_Off"
-sudo apt-get install apache2 php7 mysql-server php-pear mysql-client mysql-server php7-mysql -y
+sudo apt-get install apache2 php7.4 mysql-server php-pear mysql-client mysql-server php7.4-mysql -y
 
 ## TWEAKS and Settings
 # Permissions
