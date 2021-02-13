@@ -33,7 +33,7 @@ echo -e "$Cyan \nInstalling Apache2 $Color_Off"
 sudo apt-get install apache2 apache2-utils ssl-cert -y
 
 echo -e "$Cyan \nInstalling PHP & Requirements $Color_Off"
-sudo apt-get install php7 php7.4-common php7.4-curl php7.4-dev -y
+sudo apt-get install php7.3 php7.3-common php7.3-curl php7.3-dev -y
 
 echo -e "$Cyan \nInstalling COMPOSER and NPM $Color_Off"
 sudo apt-get install composer npm -y
@@ -42,7 +42,7 @@ echo -e "$Cyan \nInstalling MySQL $Color_Off"
 sudo apt-get install mysql-server mysql-client libmysqlclient15.dev -y
 
 echo -e "$Cyan \nVerifying installs$Color_Off"
-sudo apt-get install apache2 php7.4 mysql-server php-pear mysql-client mysql-server php7.4-mysql -y
+sudo apt-get install apache2 php7.3 mysql-server php-pear mysql-client mysql-server php7.3-mysql -y
 
 ## TWEAKS and Settings
 # Permissions
