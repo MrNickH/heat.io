@@ -41,6 +41,6 @@ class GPIO
     {
         $lib = self::getGPIOLib();
         $lib->setup($pinNumber, 'out');
-        $lib->output($pinNumber, 1);
+        $lib->output($pinNumber, $value);
     }
 }

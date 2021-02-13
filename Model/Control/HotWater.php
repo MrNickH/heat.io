@@ -10,12 +10,12 @@ class HotWater
 {
     public static function enableHotWater()
     {
-        GPIO::setGPIO(HOTWATER_PIN, true);
+        GPIO::setGPIO(HOTWATER_PIN, 0);
     }
 
     public static function disableHotWater()
     {
-        GPIO::setGPIO(HOTWATER_PIN, false);
+        GPIO::setGPIO(HOTWATER_PIN, 1);
     }
 
     public static function status()
