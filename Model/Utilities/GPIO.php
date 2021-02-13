@@ -37,10 +37,10 @@ class GPIO
         return trim(file_get_contents('/sys/class/gpio/gpio'.$pinNo.'/value'));
     }
 
-    public static function setGPIO(int $pinNumber, bool $value)
+    public static function setGPIO(int $pinNumber, int $value)
     {
         $lib = self::getGPIOLib();
         $lib->setup($pinNumber, 'out');
-        $lib->output($pinNumber, $value);
+        $lib->output($pinNumber, (int)$value);
     }
 }
