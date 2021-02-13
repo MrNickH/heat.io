@@ -21,8 +21,8 @@ class home implements \Abstracts\controller
 
     public static function view_all(array $pageData)
     {
-        $pageData['heatingStatus'] = 1;//\Model\Control\Heating::status(),
-        $pageData['hwStatus'] = 1;//\Model\Control\HotWater::status(),
+        $pageData['heatingStatus']  =\Model\Control\Heating::status();
+        $pageData['hwStatus'] =  \Model\Control\HotWater::status();
         return $pageData;
     }
 }

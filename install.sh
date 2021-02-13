@@ -33,16 +33,16 @@ echo -e "$Cyan \nInstalling Apache2 $Color_Off"
 sudo apt-get install apache2 apache2-utils ssl-cert -y
 
 echo -e "$Cyan \nInstalling PHP & Requirements $Color_Off"
-sudo apt-get install php7.3 php7.3-common php7.3-curl php7.3-dev -y
+sudo apt-get install php7.3 php7.3-common php7.3-curl php7.3-dev php7.3-mysql -y
 
 echo -e "$Cyan \nInstalling COMPOSER and NPM $Color_Off"
 sudo apt-get install composer npm -y
 
 echo -e "$Cyan \nInstalling MySQL $Color_Off"
-sudo apt-get install mysql-server mysql-client libmysqlclient15.dev -y
+sudo apt-get install mariadb-server-10.0 mariadb-client-10.0 -y
 
 echo -e "$Cyan \nVerifying installs$Color_Off"
-sudo apt-get install apache2 php7.3 mysql-server php-pear mysql-client mysql-server php7.3-mysql -y
+sudo apt-get install apache2 php7.3 php-pear mariadb-server-10.0 mariadb-client-10.0 php7.3-mysql -y
 
 ## TWEAKS and Settings
 # Permissions
@@ -85,12 +85,15 @@ sudo service apache2 restart
 echo -e "$Cyan \nRestarting Apache AGAIN $Color_Off"
 
 #Install Default DB
+sudo mysql -p < 'setup.sql'
 
 #ASK: Setup GPIOs
 
 #ASK: Setup Basic Settings
 
 #ASK: Default settings?
+
+#Create Config.php
 
 #Install CRONJOB
 
