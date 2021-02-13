@@ -31,7 +31,7 @@ echo -e "$Cyan \nInstalling Apache2 $Color_Off"
 sudo apt-get install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1 ssl-cert -y
 
 echo -e "$Cyan \nInstalling PHP & Requirements $Color_Off"
-sudo apt-get install php7 php7-common php7-curl php7-dev php7-gd php7-idn php-pear php7-mcrypt php7-ps php7-pspell php7-recode php7-xsl -y
+sudo apt-get install php7 php7-common php7-curl php7-dev composer npm -y
 
 echo -e "$Cyan \nInstalling MySQL $Color_Off"
 sudo apt-get install mysql-server mysql-client libmysqlclient15.dev -y
@@ -48,7 +48,6 @@ echo -e "$Green \nPermissions have been set $Color_Off"
 # Enabling Mod Rewrite, required for WordPress permalinks and .htaccess files
 echo -e "$Cyan \nEnabling Modules $Color_Off"
 sudo a2enmod rewrite
-sudo phpenmod mcrypt
 
 # Restart Apache
 echo -e "$Cyan \nRestarting Apache $Color_Off"
