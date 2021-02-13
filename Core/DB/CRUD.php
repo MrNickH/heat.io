@@ -285,7 +285,7 @@ class CRUD
         $abs = false,
         $columns = null,
         $groupby = null
-    ): ?array {
+    ) {
         foreach (self::retrieve($table, $find, $sortBy, $ASC, 1, $abs, $columns, $groupby) as $row) {
             return $row;
         }
