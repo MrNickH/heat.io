@@ -11,7 +11,10 @@ class GPIO
 
     private static function getGPIOLib()
     {
-        return self::$lib ??= new GPIOLib();
+        if (!isset(self::$lib)) {
+            self::$lib = new GPIOLib();
+        }
+        return self::$lib;
     }
 
     public static function readGPIO(int $pinNumber)
