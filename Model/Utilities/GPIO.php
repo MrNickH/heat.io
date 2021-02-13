@@ -19,7 +19,7 @@ class GPIO
 
     public static function readGPIO(int $pinNumber)
     {
-            echo self::readValuePin($pinNumber);
+        return self::readValuePin($pinNumber);
     }
 
     /**
