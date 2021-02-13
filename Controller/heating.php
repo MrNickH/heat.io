@@ -23,4 +23,9 @@ class heating
 
         return $pageData;
     }
+
+    public function view_on()
+    {
+        \Model\Control\Heating::enableHeating();
+    }
 }

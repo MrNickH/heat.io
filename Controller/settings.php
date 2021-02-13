@@ -12,6 +12,8 @@ class settings
             'title' => 'General Settings'
         ];
 
+        \Model\Control\Heating::enableHeating();
+
         return $pageData;
     }
 }
