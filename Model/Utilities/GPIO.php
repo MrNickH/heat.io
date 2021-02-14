@@ -32,11 +32,11 @@ class GPIO
         if (!file_exists('/sys/class/gpio/gpio' . $pinNumber )) {
             // Export pin
             file_put_contents('/sys/class/gpio/export', $pinNumber);
-            usleep(10000);
+            usleep(200 * 1000);
         }
 
         file_put_contents('/sys/class/gpio/gpio'.$pinNumber.'/direction', 'out');
-        usleep(10000);
+        usleep(100 * 1000);
         file_put_contents('/sys/class/gpio/gpio'.$pinNumber.'/value', (int)(!$value));
     }
 }
