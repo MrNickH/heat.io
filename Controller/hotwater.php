@@ -7,43 +7,35 @@ namespace Controller;
 class hotwater
 {
 
-    public function view_main()
-    {
-        $pageData = [
-            'title' => 'Hot Water'
-        ];
+    public function view_main(){}
 
-        return $pageData;
-    }
+    public function view_settings(){}
 
-    public function view_settings()
-    {
-        $pageData = [
-            'title' => 'Hot Water Settings'
-        ];
-
-        return $pageData;
-    }
-
+    public function view_schedule(){}
 
     public function view_boost()
     {
         \Model\Control\HotWater::enableHotWater();
-    }
-
-    public function view_schedule()
-    {
+        return [
+            'redirect' => '/hotwater/schedule'
+        ];
     }
 
 
     public function view_on()
     {
         \Model\Control\HotWater::enableHotWater();
+        return [
+            'redirect' => '/hotwater'
+        ];
     }
 
     public function view_off()
     {
         \Model\Control\HotWater::disableHotWater();
+        return [
+            'redirect' => '/hotwater'
+        ];
     }
 
 }

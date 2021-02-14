@@ -1,4 +1,6 @@
-<main role="main">
+Settings coming soon...
+(DNS /  PiHole / Thermostat Settings / ETC )
+<!--<main role="main">
     <section class="jumbotron text-center">
         <div class="container">
             <h2 class="h2">Heat.IO Settings</h2>
@@ -46,4 +48,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->

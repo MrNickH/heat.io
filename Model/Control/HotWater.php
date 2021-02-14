@@ -3,7 +3,6 @@
 
 namespace Model\Control;
 
-
 use Model\Utilities\GPIO;
 
 class HotWater

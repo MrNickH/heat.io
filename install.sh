@@ -36,7 +36,7 @@ echo -e "$Cyan \nInstalling PHP & Requirements $Color_Off"
 sudo apt-get install php7.3 php7.3-common php7.3-curl php7.3-dev php7.3-mysql -y
 
 echo -e "$Cyan \nInstalling COMPOSER and NPM $Color_Off"
-sudo apt-get install composer npm -y
+sudo apt-get install composer npm node -y
 
 echo -e "$Cyan \nInstalling MySQL $Color_Off"
 sudo apt-get install mariadb-server-10.0 mariadb-client-10.0 -y

@@ -23,7 +23,6 @@ define('HEATING_PIN', 20);
 
 
 define('MAINURL', 'local.heat.io');
-//define('ASSETURL', '//assets.gamblersden.com');
 define('ASSETURL', '/Assets');
 define('MAINPROTOCOL', 'http');
 define('SECURE', false);

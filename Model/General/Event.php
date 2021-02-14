@@ -3,7 +3,8 @@
 
 namespace Model\General;
 
-class PinSetup
+
+class Event
 {
 
 }
