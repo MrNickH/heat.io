@@ -7,16 +7,6 @@ use PhpGpio\Gpio as GPIOLib;
 
 class GPIO
 {
-    private static $lib;
-
-    private static function getGPIOLib()
-    {
-        if (!isset(self::$lib)) {
-            self::$lib = new GPIOLib();
-        }
-        return self::$lib;
-    }
-
     public static function readGPIO(int $pinNumber)
     {
         return self::readValuePin($pinNumber);
@@ -34,13 +24,17 @@ class GPIO
             return false;
         }
 
-        return trim(file_get_contents('/sys/class/gpio/gpio'.$pinNo.'/value'));
+        return (bool) !(trim(file_get_contents('/sys/class/gpio/gpio'.$pinNo.'/value')));
     }
 
-    public static function setGPIO(int $pinNumber, int $value)
+    public static function setGPIO(int $pinNumber, bool $value)
     {
-        $lib = self::getGPIOLib();
-        $lib->setup($pinNumber, 'out');
-        $lib->output($pinNumber, (int)$value);
+        if (!file_exists('/sys/class/gpio/gpio' . $pinNumber . '/direction')) {
+            // Export pin
+            file_put_contents('/sys/class/gpio/export', $pinNumber);
+            file_put_contents('/sys/class/gpio/gpio'.$pinNumber.'/direction', 'out');
+        }
+
+        file_put_contents('/sys/class/gpio/gpio'.$pinNumber.'/value', (int)(!$value));
     }
 }
