@@ -71,9 +71,9 @@
                         <div class="align-items-center">
                             <div class="btn-group">
                                 <?php if($hwStatus): ?>
-                                    <a href="#" type="button" class="btn btn-info my-2"><i class="fa fa-icicles"></i> Turn Hot Water Off </a>
+                                    <a href="/hotwater/off" type="button" class="btn btn-info my-2"><i class="fa fa-icicles"></i> Turn Hot Water Off </a>
                                 <?php else: ?>
-                                    <a href="/" type="button"  class="btn btn-warning my-2"><i class="fa fa-shower"></i> Turn Hot Water On </a>
+                                    <a href="/hotwater/on" type="button"  class="btn btn-warning my-2"><i class="fa fa-shower"></i> Turn Hot Water On </a>
                                 <?php endif; ?>
                                 <a href="/hotwater/schedule" type="button"  class="btn btn-outline-primary my-2"><i class="fa fa-clock"></i> Schedule </a>
                                 <a href="/hotwater/settings" type="button"  class="btn btn-outline-dark  my-2"><i class="fa fa-cogs"></i> Settings </a>

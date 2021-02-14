@@ -26,12 +26,20 @@ class hotwater
     }
 
 
+    public function view_boost()
+    {
+        \Model\Control\HotWater::enableHotWater();
+    }
+
+    public function view_schedule()
+    {
+    }
+
 
     public function view_on()
     {
         \Model\Control\HotWater::enableHotWater();
     }
-
 
     public function view_off()
     {
