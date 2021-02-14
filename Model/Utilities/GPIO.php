@@ -29,7 +29,7 @@ class GPIO
 
     public static function setGPIO(int $pinNumber, bool $value)
     {
-        if (!file_exists('/sys/class/gpio/gpio' . $pinNumber . '/direction')) {
+        if (!file_exists('/sys/class/gpio/gpio' . $pinNumber )) {
             // Export pin
             file_put_contents('/sys/class/gpio/export', $pinNumber);
             file_put_contents('/sys/class/gpio/gpio'.$pinNumber.'/direction', 'out');

@@ -28,4 +28,10 @@ class heating
     {
         \Model\Control\Heating::enableHeating();
     }
+
+
+    public function view_off()
+    {
+        \Model\Control\Heating::disableHeating();
+    }
 }
